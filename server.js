@@ -159,6 +159,12 @@ app.get('/', (req, res) => {
     res.send(htmlFrontend);
 });
 
+// Uncomment for local view and comment out module.exports = app;
+
+// app.listen(PORT, () => {
+//     console.log(`Server running...`);
+// });
+
 module.exports = app;
 
 // ==========================================
