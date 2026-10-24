@@ -159,9 +159,7 @@ app.get('/', (req, res) => {
     res.send(htmlFrontend);
 });
 
-app.listen(PORT, () => {
-    console.log(`Security Demo Server running on http://localhost:${PORT}`);
-});
+module.exports = app;
 
 // ==========================================
 // MINIMAL FRONTEND (HTML/JS)
