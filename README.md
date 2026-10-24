@@ -39,3 +39,22 @@ However, to keep this demonstration completely self-contained and easy to run, I
 1. The JWT_SECRET was originally hardcoded into the server.js file and would have been included in the repo. I have moved it into a .env file.
 2. There was no requirements on either username or password. This could have allowed unnecessarily long passwords to be hashed which could have been exploited to slow our system. It also allowed for insecure passwords and possible SQL injection.
 3. There was no limit on JSON payload sizes, so malicious actors could have sent large JSON files and caused a DOS for all other users.
+
+## QA Checklist
+
+[ ] 1. Authentication Functional Tests:
+Successful registration with a new account. Passed
+Successful login generating an active session or token. Passed
+Failed login with an invalid password displays a generic error message. Passed
+Logout successfully invalidates or removes the local credential/session. Passed
+[ ] 2. Authorization & Privilege Boundary Tests:
+Logging in as a standard User allows access to the User Dashboard. Passed
+Logging in as a standard User and attempting to access the Admin view/endpoint returns a clean 403 Forbidden (or redirects safely). Passed
+Logging in as an Admin grants access to both User and Admin resources. Passed
+Attempting to access protected endpoints while logged out returns 401 Unauthorized. Passed
+[ ] 3. Input Validation & Edge Cases:
+Empty username/password submissions are rejected with client and server validation. Passed
+Entering special characters or SQL-like syntax does not crash the server. Passed
+[ ] 4. Browser Console & Network Health:
+Browser DevTools Network tab shows proper HTTP status codes (200, 401, 403). Passed
+DevTools Console is free of unhandled JavaScript runtime exceptions. Passed
