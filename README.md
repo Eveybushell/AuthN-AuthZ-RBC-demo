@@ -1,10 +1,14 @@
 # AuthN-AuthZ-RBC-demo
 
 ## Set Up
+If running locally:
 - 'npm install' for packages
 - create a .env file with JWT_SECRET password
+- Follow commenting / uncommenting pattern just above MINIMAL FRONTEND section
 - 'node server.js' to start local /3000 site
 
+If running on live site:
+- visit https://authn-authz-rbc-demo-4gazsq9ia-evey2.vercel.app/
 ## Prompts:
 
 PROMPT: Act as a senior security engineer. Build a lightweight full-stack application (or REST API with a simple frontend) demonstrating basic Authentication and Role-Based Access Control (RBAC).
